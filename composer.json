@@ -3,7 +3,6 @@
     "description": "SodionAuth api core.",
     "version": "v0.0.1",
     "type": "library",
-    "minimum-stability": "beta",
     "license": "Apache-2.0",
     "authors": [
         {

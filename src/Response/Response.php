@@ -19,19 +19,19 @@ class Response
         return call_user_func(
             [self::class,'__callStatic'],
             'unknown',
-            array_merge([
+            [array_merge([
                 'code'=>$code,
                 'message'=>$message
-            ],$parms)
+            ],$parms)]
         );
     }
     public static function name_incorrect($correct,...$parms){
         return call_user_func(
             [self::class,'__callStatic'],
-            'unknown',
-            array_merge([
+            'name_incorrect',
+            [array_merge([
                 'correct'=>$correct
-            ],$parms)
+            ],$parms)]
         );
     }
 
@@ -55,7 +55,7 @@ class Response
     {
         return (new Response(array_merge(
             ['result'=>$key],
-            $parms
+            $parms ? $parms[0] : []
         )));
     }
 }
