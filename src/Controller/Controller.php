@@ -26,12 +26,14 @@ class Controller
         switch ($request->action) {
             case 'register':
                 return (new RegisterController($this->provider))->hand($request);
-            case 'login':
-                return (new LoginController($this->provider))->hand($request);
-            case 'loginEmail':
-                return (new LoginEmailController($this->provider))->hand($request);
-            case 'join':
-                return (new JoinController($this->provider))->hand($request);
+            case 'loginByName':
+                return (new LoginByNameController($this->provider))->hand($request);
+            case 'loginByEmail':
+                return (new LoginByEmailController($this->provider))->hand($request);
+            case 'getByName':
+                return (new GetByNameController($this->provider))->hand($request);
+            case 'getByEmail':
+                return (new GetByEmailController($this->provider))->hand($request);
             default:
                 return Response::unknown('flarum_error','ah?'.$request->action);
         }

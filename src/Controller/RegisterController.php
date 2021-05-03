@@ -26,19 +26,5 @@ class RegisterController extends Controller
             default:
                 return Response::unknown('server_error', 'server_error');
         }
-        $user = User::where('username', $username)->first();
-        if ($user) {
-            return Response::user_exist();
-        }
-        $user = User::where('email', $email)->first();
-        if ($user) {
-            return Response::email_exist();
-        }
-        $user = User::register($username, $email, $password);
-        if (!$user) {
-            return Response::unknown('flarum_error','flarum error');
-        }
-        $user->saveOrFail();
-        return Response::ok();
     }
 }

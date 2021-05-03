@@ -11,21 +11,27 @@ abstract class UserProvider
      * @param $username
      * @return Result
      */
-    public abstract function nameVerify($username);
+    public abstract function getByName($username);
+
+    /**
+     * @param $email
+     * @return Result
+     */
+    public abstract function getByEmail($email);
 
     /**
      * @param $username
      * @param $password
      * @return Result
      */
-    public abstract function login($username, $password);
+    public abstract function loginByName($username, $password);
 
     /**
      * @param $email
      * @param $password
      * @return Result
      */
-    public abstract function loginEmail($email, $password);
+    public abstract function loginByEmail($email, $password);
 
     /**
      * @param $username

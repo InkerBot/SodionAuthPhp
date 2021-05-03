@@ -1,7 +1,7 @@
 {
     "name": "mohist/sodion-auth",
     "description": "SodionAuth api core.",
-    "version": "v0.0.1",
+    "version": "v0.0.2",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
